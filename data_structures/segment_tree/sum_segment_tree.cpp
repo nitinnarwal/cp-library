@@ -19,7 +19,7 @@ void build(int node, int l, int r){
     tree[node] = tree[2*node] + tree[2*node+1];
 }
 
-void update(int node, int l, int r, int ind, int val){
+void add(int node, int l, int r, int ind, int val){
     if(l == r){
         tree[node] += val;
         return;
