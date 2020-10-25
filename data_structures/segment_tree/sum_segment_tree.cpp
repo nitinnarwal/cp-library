@@ -10,7 +10,7 @@ int tree[4*N + 5];
 void build(int node, int l, int r){
     if(l>r) return;
     if(l == r){
-        tree[node] = 5555;
+        tree[node] = 0;
         return;
     }
     int m = (l + r)/2;
@@ -19,9 +19,9 @@ void build(int node, int l, int r){
     tree[node] = tree[2*node] + tree[2*node+1];
 }
 
-void add(int node, int l, int r, int ind, int val){
+void update(int node, int l, int r, int ind, int val){
     if(l == r){
-        tree[node] += val;
+        tree[node] = val;
         return;
     }
 
@@ -36,7 +36,7 @@ void add(int node, int l, int r, int ind, int val){
 
 int query(int node, int l, int r, int ql, int qr){
     if(ql<=l && r<=qr) return tree[node];
-    if(ql>qr || ql>r || l>r) return 0;
+    if(ql>qr || ql>r || l>qr) return 0;
 
     int m = (l + r)/2;
     int one = query(2*node, l, m, ql, qr);
