@@ -18,7 +18,6 @@ bool dfs(int node, int par){
     from[node] = par;
 
     for(int x : g[node]){
-        if(x == par) continue;
         if(col[x] == 1){
             // cycle found
             cycle.push_back(x);
@@ -52,7 +51,6 @@ signed main(){
     for(int i=1;i<=m;i++){
         int u,v; cin >> u >> v;
         g[u].push_back(v);
-        g[v].push_back(u);
     }
 
     bool found = false;
