@@ -98,6 +98,8 @@ vector<Rect> split(Rect white, Rect black){
     return a;
 }
 
+// Problem: https://codeforces.com/contest/1216/problem/C
+
 void solve(){
     Rect white = Rect::read();
     Rect black1 = Rect::read();
@@ -144,3 +146,5 @@ signed main() {
     }
     return 0;
 }
+
+git push https://nitinnarwal@github.com/nitinnarwal/cp-library.git
